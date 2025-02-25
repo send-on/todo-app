@@ -1,19 +1,18 @@
-import React, { useState } from 'react'; 
-  
+// Exercise 1:
+// Add todo list functionality to the frontend (Add and Delete) 
+// Style the todo list to look similar to the following: https://imgur.com/a/dNiZhTU
+
+import React from 'react';   
 const App = () => { 
-  const [value, setValue] = useState('');
-  
     return ( 
-      <div className='m-4'>
-        <div className='flex justify-center'>
+      <div >
+        <div >
           To-DO List
         </div>
-          <div className='flex justify-center'>
+          <div >
             <input
               className='border border-gray-400 p-2'
               type='text'
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
             />
             <button
               className='bg-blue-400 p-2 text-white'
@@ -29,6 +28,14 @@ const App = () => {
             <Item />
           </ul>
           </div>
+          <div className=''>
+            <button
+              className='bg-blue-400 p-2 text-white'
+              > Get Weather</button>
+          </div>
+          <div className='text-black'>
+            Hows the weather?
+          </div>
       </div>
     ); 
 }; 
@@ -36,16 +43,12 @@ const App = () => {
 export default App;
 
 const Item = () => (
-  <div className='flex justify-center'>
-    <div className='border border-gray-400 p-2 m-2'>
-      <div className='flex justify-between'>
-        <div className='mr-4'>Item</div>
-        <div>
-          <button 
-            onClick={() => console.log('deleted')}
-            className='bg-red-400 p-2 text-white'>Delete</button>
-        </div>
-      </div>
+  <div >
+    <div >Item Name</div>
+    <div>
+      <button 
+        onClick={() => console.log('deleted')}
+        className='bg-red-400 p-2 text-white'>Delete</button>
     </div>
   </div>
 )
