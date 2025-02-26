@@ -1,16 +1,17 @@
 // DO NOT MODIFY THIS FILE
-import type { NextApiRequest, NextApiResponse } from "next";
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-type Data = {
-  weather: string;
+export type WeatherData = {
+  message: string;
 };
 
 export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  _req: NextApiRequest,
+  res: NextApiResponse<WeatherData>
 ) {
   if (Math.random() < 0.3) {
-    res.status(500).json({ weather: "Service Unavailable" })
+    res.status(500).json({ message: 'Service Unavailable' });
   }
-  res.status(200).json({ weather: "The weather is great" })
+  res.status(200).json({ message: 'The weather is great' });
 }

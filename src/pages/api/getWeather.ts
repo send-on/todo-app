@@ -1,21 +1,25 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { WeatherData } from './generateWeather';
 
-type Data = {
-  weather: string,
-  message?: string
-};
-
+/*  
+    Get the data from the weather API
+    The data returned should look lik
+    ```
+        {
+            "message": "The weather is great" | "Service Unavailable"
+        }
+    ```
+*/
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>,
+  _req: NextApiRequest,
+  res: NextApiResponse<WeatherData>
 ) {
-  // Fetch weather from http://localhost:3000/api/generateWeather
-  // Weather will fail to come back 30% of the time
-  // If successful, send weather and to do list to your webhook url
-  // If 500 error, return "Service Unavailable" to the client
+  // For Next.js reference, you can use the following as the url:
+  const url = 'http://localhost:3000/api/generateWeather';
+
+  // Next.js return responses expected to be in the format:
+  res.status(200).json({ message: 'Message here' });
+  res.status(500).json({ message: 'Service Unavailable' });
+
+  return;
 }
-
-
-
-
-
