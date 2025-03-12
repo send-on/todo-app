@@ -1,0 +1,6 @@
+{
+  "github.copilot.enable": false,
+  "github.copilot.editor.enable": false,
+  "editor.inlineSuggest.enabled": false, 
+  "workbench.experimental.aiFeatures.enabled": false
+}
