@@ -17,11 +17,19 @@ const Item = () => (
 
 const App = () => {
   // For Next.js reference, you can use the following as the urls:
-  const weatherURL = '/api/getWeather';
+  const weatherURL = '/api/generateWeather';
   const webhookUrl = '/api/sendData';
 
-  const handleClick = async () => {
+  const handleGetWeatherClick = async () => {
     console.log('Get Weather');
+  }
+
+  const handleAddItemClick = () => {
+    console.log('Add Item');
+  }
+
+  const handleDeleteItemClick = () => {
+    console.log('Delete Item');
   }
 
   return (
@@ -49,7 +57,7 @@ const App = () => {
             marginLeft: '4px',
             padding: '9px',
           }}
-          onClick={() => console.log('Add')}
+          onClick={handleAddItemClick}
         >
           Add
         </button>
@@ -66,7 +74,7 @@ const App = () => {
           backgroundColor: 'blue',
           padding: '10px',
         }}
-        onClick={handleClick}
+        onClick={handleGetWeatherClick}
       >
         Get Weather
       </button>
